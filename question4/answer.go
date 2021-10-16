@@ -36,5 +36,5 @@ func sortStr(word string) string {
 
 func main() {
 	listOfStr := []string{"kita", "atik", "tika", "aku", "kia", "makan", "kua"}
-	Anagram(listOfStr)
+	sortAnagram(listOfStr)
 }
