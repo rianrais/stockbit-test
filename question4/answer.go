@@ -6,7 +6,6 @@ import (
 	"strings"
 )
 
-
 func Anagram(anagArr []string) {
 	list := make(map[string][]string)
 
@@ -16,8 +15,11 @@ func Anagram(anagArr []string) {
 	}
 
 	for _, words := range list {
-		for _, w := range words {
-			fmt.Print(w, " ")
+		for idx, w := range words {
+			fmt.Printf("'%s'", w)
+			if idx+1 != len(words) {
+				fmt.Print(", ")
+			}
 		}
 		fmt.Println()
 	}
@@ -29,7 +31,6 @@ func sortStr(word string) string {
 
 	return strings.Join(s, "")
 }
-
 
 func main() {
 	listOfStr := []string{"kita", "atik", "tika", "aku", "kia", "makan", "kua"}
