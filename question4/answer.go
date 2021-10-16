@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-// sortAnagram() will sort array of string based on anagram and print it
+// sortAnagram() will sort array of string based on anagram and print it.
 func sortAnagram(anagArr []string) {
 	list := make(map[string][]string)
 
@@ -26,7 +26,7 @@ func sortAnagram(anagArr []string) {
 	}
 }
 
-// sortStr() will sort any string in ascending matter
+// sortStr() will sort any string in ascending manner.
 func sortStr(word string) string {
 	s := strings.Split(word, "")
 	sort.Strings(s)

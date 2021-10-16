@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// findFirstStringInBracket() will find words inside first full parentheses
+// findFirstStringInBracket() will find words inside first full parentheses.
 func findFirstStringInBracket(str string) string {
 	if len(str) == 0 {
 		return ""
@@ -30,7 +30,7 @@ func findFirstStringInBracket(str string) string {
 	return string(runes[1:closingBracketIndex])
 }
 
-// alternativeFindFirstStringInBracket() will find words inside first parentheses if we know the string will have no Unicode text (without using rune)
+// alternativeFindFirstStringInBracket() will find words inside first parentheses if we know the string will have no Unicode text (without using rune).
 func alternativeFindFirstStringInBracket(str string) string {
 	// Find opening and closing parenthesis index
 	opIndex := strings.Index(str, "(")
