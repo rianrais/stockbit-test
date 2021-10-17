@@ -52,10 +52,11 @@ func main() {
 	totalPage := int(math.Ceil(totalResult / 10))
 	// fmt.Printf("Total result: %s\nTotal page: %d\n", res.TotalResult, totalPage)
 
-	// Use sync.WaitGroup and adding totalPage to it
+	// Use sync.WaitGroup and adding totalPage into it
 	var wg sync.WaitGroup
 	wg.Add(totalPage - 1)
 
+	// Use go func() to hit OMDB API concurrently
 	if totalPage > 1 {
 		go func() {
 			for i := 2; i <= totalPage; i++ {
