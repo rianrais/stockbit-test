@@ -17,7 +17,7 @@ func sortAnagram(anagArr []string) {
 
 	for _, words := range list {
 		for idx, w := range words {
-			fmt.Printf("'%s'", w)
+			fmt.Printf("\"%s\"", w)
 			if idx+1 != len(words) {
 				fmt.Print(", ")
 			}
