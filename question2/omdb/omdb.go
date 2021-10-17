@@ -13,6 +13,12 @@ import (
 	"strconv"
 )
 
+// This is used to simulate .env file
+var (
+	BaseURL string = "http://www.omdbapi.com/"
+	OmdbKey string = "faf7e5bb"
+)
+
 func GetOmdbData(url string) (model.Response, error) {
 	response, err := http.Get(url)
 	if err != nil {
