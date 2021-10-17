@@ -41,10 +41,8 @@ func GetOmdbData(url string) (model.Response, error) {
 }
 
 func SetOmdbURL(currentPage string, searchParam string) string {
-	baseURL := "http://www.omdbapi.com/"
-	omdbKey := "faf7e5bb"
 	searchParam = url.QueryEscape(searchParam)
-	urlString := fmt.Sprintf("%s/?apikey=%s&page=%s&s=%s", baseURL, omdbKey, currentPage, searchParam)
+	urlString := fmt.Sprintf("%s/?apikey=%s&page=%s&s=%s", BaseURL, OmdbKey, currentPage, searchParam)
 
 	return urlString
 }
