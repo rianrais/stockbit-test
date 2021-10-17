@@ -19,6 +19,7 @@ var (
 	OmdbKey string = "faf7e5bb"
 )
 
+// will return model.Response if successfull to be processed as log.
 func GetOmdbData(url string) (model.Response, error) {
 	response, err := http.Get(url)
 	if err != nil {
@@ -40,6 +41,7 @@ func GetOmdbData(url string) (model.Response, error) {
 	return res, err
 }
 
+// will return string that will be used to determine the URL to hit OMDB.
 func SetOmdbURL(currentPage string, searchParam string) string {
 	searchParam = url.QueryEscape(searchParam)
 	urlString := fmt.Sprintf("%s/?apikey=%s&page=%s&s=%s", BaseURL, OmdbKey, currentPage, searchParam)
@@ -47,6 +49,7 @@ func SetOmdbURL(currentPage string, searchParam string) string {
 	return urlString
 }
 
+// will return total page to determine how many pages.
 func GetTotalPage(totalRes string) int {
 	totalResult, _ := strconv.ParseFloat(totalRes, 64)
 	totalPage := int(math.Ceil(totalResult / 10))
