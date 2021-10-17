@@ -5,10 +5,12 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"math"
 	"net/http"
 	"net/url"
 	"os"
 	"question2/model"
+	"strconv"
 )
 
 func GetOmdbData(url string) (model.Response, error) {
@@ -39,4 +41,11 @@ func SetOmdbURL(currentPage string, searchParam string) string {
 	urlString := fmt.Sprintf("%s/?apikey=%s&page=%s&s=%s", baseURL, omdbKey, currentPage, searchParam)
 
 	return urlString
+}
+
+func GetTotalPage(totalRes string) int {
+	totalResult, _ := strconv.ParseFloat(totalRes, 64)
+	totalPage := int(math.Ceil(totalResult / 10))
+
+	return totalPage
 }
