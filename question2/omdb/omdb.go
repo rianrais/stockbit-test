@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"net/url"
 	"os"
 	"question2/model"
 )
@@ -31,11 +32,11 @@ func GetOmdbData(url string) (model.Response, error) {
 	return res, err
 }
 
-func SetOmdbURL(currentPage string) string {
+func SetOmdbURL(currentPage string, searchParam string) string {
 	baseURL := "http://www.omdbapi.com/"
 	omdbKey := "faf7e5bb"
-	searchParam := "candyman"
-	url := fmt.Sprintf("%s/?apikey=%s&page=%s&s=%s", baseURL, omdbKey, currentPage, searchParam)
+	searchParam = url.QueryEscape(searchParam)
+	urlString := fmt.Sprintf("%s/?apikey=%s&page=%s&s=%s", baseURL, omdbKey, currentPage, searchParam)
 
-	return url
+	return urlString
 }

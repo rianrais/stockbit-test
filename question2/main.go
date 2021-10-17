@@ -7,6 +7,7 @@ import (
 	"log"
 	"math"
 	"net/http"
+	"net/url"
 	"os"
 	"strconv"
 	"sync"
@@ -39,10 +40,10 @@ func main() {
 	baseURL := "http://www.omdbapi.com/"
 	omdbKey := "faf7e5bb"
 	currentPage := "1"
-	searchParam := "candyman"
-	url := fmt.Sprintf("%s/?apikey=%s&page=%s&s=%s", baseURL, omdbKey, currentPage, searchParam)
+	searchParam := "la land"
+	urlString := fmt.Sprintf("%s/?apikey=%s&page=%s&s=%s", baseURL, omdbKey, currentPage, url.QueryEscape(searchParam))
 
-	res, err := getOmbdApi(url)
+	res, err := getOmbdApi(urlString)
 	if err != nil {
 		log.Println(err)
 	}
@@ -60,8 +61,8 @@ func main() {
 			for i := 2; i <= totalPage; i++ {
 				defer wg.Done()
 				currentPage = strconv.Itoa(i)
-				url = fmt.Sprintf("%s/?apikey=%s&page=%s&s=%s", baseURL, omdbKey, currentPage, searchParam)
-				getOmbdApi(url)
+				urlString = fmt.Sprintf("%s/?apikey=%s&page=%s&s=%s", baseURL, omdbKey, currentPage, searchParam)
+				getOmbdApi(urlString)
 			}
 		}()
 	}
