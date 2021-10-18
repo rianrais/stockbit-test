@@ -13,7 +13,7 @@ import (
 // This is used to simulate .env file
 var (
 	BaseURL string = "http://www.omdbapi.com"
-	OmdbKey string = "faf7e5bb"
+	OmdbKey string = "8334588b"
 )
 
 // will return Response if successfull to be processed as log.
