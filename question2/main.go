@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -15,6 +16,6 @@ func main() {
 	// Router list
 	router.GET("/omdb", omdb.Get)
 
-	// Listening to port 3070
+	fmt.Println("Running! Listening to port 3070..")
 	log.Fatal(http.ListenAndServe(":3070", router))
 }
