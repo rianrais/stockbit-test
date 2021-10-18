@@ -25,7 +25,7 @@ To get the dependency. And then use API platform (such as Postman) to hit the en
 
 ## Important Notes
 
-Since the OMDB API key given to me via email can not be used any further, I've taken steps to get my own free API key for OMDB API hence I will not used it here.
+Since the OMDB API key given to me via email can not be used any further, I've taken steps to get my own free API key for OMDB API.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
