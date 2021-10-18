@@ -14,7 +14,14 @@ cd question3
 go run answer.go
 ```
 
-For the REST API question, do the same as above but instead run `go run main.go` and then use API platform (such as Postman) to hit the endpoint with the required query parameters.
+For the REST API question, do the same as above by entering certain folder but instead run:
+
+```bash
+go get
+go run main.go
+```
+
+To get the dependency. And then use API platform (such as Postman) to hit the endpoint with the required query parameters.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
