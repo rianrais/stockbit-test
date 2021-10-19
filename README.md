@@ -23,7 +23,7 @@ go run main.go
 
 To get the dependency. And then use API platform (such as Postman) to hit the endpoint with the required query parameters.
 
-The endpoint would be: `localhost:3070/omdb` with GET method.
+The endpoint should be: `localhost:3070/omdb` with GET method.
 
 ## Important Notes
 
