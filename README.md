@@ -29,5 +29,7 @@ The endpoint should be: `localhost:3070/omdb` with GET method.
 
 Since the OMDB API key given to me via email can not be used any further, I've taken steps to get my own free API key for OMDB API.
 
+And since I haven't learned yet about Protobuf and gRPC, nor do I have time to learn it within given timeframe for the test. I was unable to build the gRPC method and only have answer for the REST API. But I am looking forward to learning all about it should I have the chance.
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
